@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block script%}
+    <script>
+        window.onload = function() {
+            let startTime;
+            let timerInterval;
+
+            document.getElementById('timerButton').addEventListener('click', () => {
+                let button = document.getElementById('timerButton');
+                if (timerInterval) {
+                    // Stop timer
+                    clearInterval(timerInterval);
+                    let endTime = new Date();
+                    let elapsedSeconds = (endTime - startTime) / 1000;
+                    let differenceFromFive = Math.abs(elapsedSeconds - 5);
+                    document.getElementById('note').innerHTML = `Elapsed time: ${elapsedSeconds} seconds. Try again!`;
+                    timerInterval = null;
+                    button.classList.remove('active');
+                    // Send elapsed time to Flask backend
+                    fetch('/play', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ time: elapsedSeconds })
+                    });
+                } else {
+                    // Start timer
+                    startTime = new Date();
+                    timerInterval = setInterval(() => {
+                        // Timer running
+                    }, 10);
+                    button.classList.add('active');
+                }
+            });
+        }
+    </script>
+
+{% endblock %}
+
+{% block title %}
+    Game
+{% endblock %}
+
+{% block main %}
+    <hr>
+    <br>
+    <button id="timerButton">Start/Stop Timer</button>
+    <p id="note"></p>
+    <br>
+    <hr>
+{% endblock %}

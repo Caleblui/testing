@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block script%}{% endblock %}
+
+{% block title %}
+    Leaderboard
+{% endblock %}
+
+{% block main %}
+<h1>Leaderboard</h1>
+<table>
+    <tr>
+        <th>Rank</th>
+        <th>Username</th>
+        <th>Time</th>
+        <th>Difference between time and 5-seconds</th>
+    </tr>
+    {% for rank, username, time, score in leaderboard_data %}
+        <tr>
+            <td>{{ rank }}</td>
+            <td>{{ username }}</td>
+            <td>{{ time }}</td>
+            <td>{{ score }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

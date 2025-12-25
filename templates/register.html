@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block script%}
+    {% if message != Null %}
+        <script>
+            window.onload = function() {
+                document.querySelector('#message').innerHTML = "{{ message }}";
+            }
+        </script>
+    {% endif %}
+
+{% endblock %}
+
+{% block title %}
+    map
+{% endblock %}
+
+{% block main %}
+    <hr>
+    <br>
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus name="username" placeholder="Username" type="text">
+        <input name="password" placeholder="Password" type="password">
+        <input name="confirmation" placeholder="Confirm the password" type="password">
+        <button class="submit" type="submit">Register</button>
+    </form>
+    
+    {% if message != Null %}
+        <p style="color: red;" id="message"></p>
+    {% endif %}
+    <br>
+    <hr>
+{% endblock %}

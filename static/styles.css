@@ -1,0 +1,138 @@
+body{
+    background-color: #fae0ad;
+}
+
+
+nav {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #dac08d;
+    padding:15px 20px;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+h4{
+    text-decoration: blink;
+}
+
+.special{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navtitle {
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #6b2f00;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.navtitle:hover {
+    color: green;
+    border-color: green;
+}
+
+input {
+    width: 200px;
+    color: #6b2f00;
+    border-color: #6b2f00;
+    background-color: #fae0ad;
+    border-radius: 5px;
+    border-width: 2px;
+}
+
+.submit {
+    color: #6b2f00;
+    border-color: #6b2f00;
+    border-radius: 5px;
+    border-width: 2px;
+    background-color: #fae0ad;
+}
+
+.submit:hover {
+    background-color: #6b2f00;
+    color: #fae0ad;
+    transition: color 0.1s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+#timerButton {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #dac08d;
+    padding: 100px;
+    width: 100%;
+}
+
+li {
+    color: #6b2f00;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ig {
+    text-decoration: none;
+    text-align: block;
+    color: #6b2f00;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    display: center;
+    width: 6rem;
+    white-space: nowrap;
+    margin: auto;
+}
+
+
+.ig:hover{
+    color: red;
+    border-color: red;
+}
+
+.gmail {
+    text-decoration: none;
+    color: #6b2f00;
+    display: block;
+    width: 6rem;
+    position: relative;
+    margin: auto;
+    left: -1.5rem;
+}
+
+td {
+    padding-right: 1rem;
+    color: #6b2f00;
+}
+
+th {
+    padding-right: 1rem;
+    color: #6b2f00;
+}
+
+#webpage{
+    color: #6b2f00;
+    text-decoration: line-through;
+}
+
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #dac08d;
+    padding:15px 20px;
+}
+
+#timerButton.active {
+    background-color: green;
+    color: white;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>{% block title %}{% endblock %}</title>
+        {% block script %}{% endblock %}
+    </head>
+    <body>
+        <nav>
+            {% if session["user_id"] %}
+                <a href="/play" class='navtitle'> 5-sec Game</a>
+                <a href="/leaderboard" class='navtitle'>Leaderboard</a>
+                <a href="/logout" class='navtitle' style="position: absolute; right: 1rem">Logout</a>
+            {% else %}
+                <a href='/' style="padding-right: 40px;"><img src="/static/clrc.PNG" alt="Homepage" style="width: 2rem; height: 2.05rem; position: absolute; top: 17px;"></a>
+                <a href="/register" class='navtitle' style="position: absolute; right: 1rem">Register</a>
+            {% endif %}
+        </nav>
+        {% block main %}{% endblock %}
+    </body>
+    <footer>
+        <div class="foot">
+            <a href="https://www.instagram.com/caleb._.lui/" class="ig">@caleb._.lui</a>
+            <p class="gmail">calebluikl@gmail.com</p>
+        </div>
+    </footer>
+</html>
